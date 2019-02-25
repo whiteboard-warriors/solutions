@@ -6,18 +6,24 @@ For example, 6 looks like 9 flipped upside-down. And "61" when held upside down 
 
 Write an algorithm to determine for given a number if it’s possible that the card is displayed upside-down.
 
-The cards do not have leading 0s for numbers with fewer than 3 digits, so they are not printed “01” for “1” or “071” for “71”  
+The cards do not have leading 0s, so they are not printed “01” for “1” or “071” for “71”  
 
+------------------------------------------------------------------------------------------
+
+Pseudo code (because there are many assumptions we can make on this question, you may solve it based on different logic that what has been used below).
+
+We will need to take a number into our function, and will need to make sure it falls into the 1 - 650 range
+
+The leading zero in JavaScript is a bit of a trick question. JavaScript will automatically convert the integer to a number without a leading zero, so number.toString() will not contain the leading zero. Therefore, we cannot test for this particular edge case unless the numbers are being entered as strings.
+
+Because of the above issue with leading zeros, we will assume that the input will always be in string form.
+
+We will also assume that the number strings will resemble integers (no floats, etc).
+
+We will need to both flip the digits in valid numbers (go from right-side-up to upside-down) as well as reorder those that have more than 1 digit. For example, 601 would flip to 901 (1 stays the same regardless of orientation) and then reorder to 109. 
+
+We will also assume that, if a number looks the same right-side up as it does upside down, that the formula will return false as the "bidder" would still be using the same number regardless of the orientation. 
 */
-
-// Pseudo code (because there are many assumptions we can make on this question, you may solve it based on different logic that what has been used below).
-
-// We will need to take a number into our function, and will need to make sure it falls into the 1 - 650 range
-// The leading zero in JavaScript is a bit of a trick question. JavaScript will automatically convert the integer to a number without a leading zero, so number.toString() will not contain the leading zero. Therefore, we cannot test for this particular edge case unless the numbers are being entered as strings.
-// Because of the above issue with leading zeros, we will assume that the input will always be in string form.
-// We will also assume that the number strings will resemble integers (no floats, etc).
-// We will need to both flip the digits in valid numbers (go from right-side-up to upside-down) as well as reorder those that have more than 1 digit. For example, 601 would flip to 901 (1 stays the same regardless of orientation) and then reorder to 109. 
-// We will also assume that, if a number looks the same right-side up as it does upside down, that the formula will return false as the "bidder" would still be using the same number regardless of the orientation. 
 
 const analyzeNumber = (number) => {
     let numberFlipped = false
