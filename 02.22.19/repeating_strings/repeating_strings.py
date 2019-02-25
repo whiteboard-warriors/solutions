@@ -11,3 +11,17 @@
 
 #Source: 
 #https://practice.geeksforgeeks.org/problems/twice-counter/0
+
+repeatedStrings = ['ocean','sand','ocean','waves','water','waves','water','sand','water','sand']
+results = {}
+for s in repeatedStrings:
+    if s in results:
+        results[s] = results[s]+1
+    else:
+        results[s] = 1
+
+print(results)
+
+for r in results:
+    print("{0}: {1}".format(r, results[r]))
+    

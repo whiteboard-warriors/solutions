@@ -15,3 +15,18 @@ Source:
 https://practice.geeksforgeeks.org/problems/twice-counter/0
 
 */
+
+
+var repeatedStrings  = ['ocean','sand','ocean','waves','water','waves','water','sand','water','sand'];
+var results = {}
+for(var i = 0; i < repeatedStrings.length; i++){
+    if(results[repeatedStrings[i]] == undefined){
+        results[repeatedStrings[i]] = 1;
+    } else {
+        results[repeatedStrings[i]]+=1;
+    }
+}
+// remember "results" is an JS Object NOT an array so it is not indexed
+for(var s in results){
+    console.log(s+': '+results[s])
+}
