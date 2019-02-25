@@ -11,6 +11,8 @@ https://practice.geeksforgeeks.org/problems/rock-paper-scissors/0
 
 */
 
+// Pseudo-code:
+
 // We need to have two players
 // Each player can get one of three options
 // We will need to account for players ending up in a tie
@@ -46,16 +48,31 @@ const playGame = () => {
         switch (true) {
             // Tie
             case player1Roll === player2Roll:
-                console.log(`--- Round ${counter} --- \nPlayer 1: ${convertToString(player1Roll)} \nPlayer 2: ${convertToString(player2Roll)} \nThere was a tie \n---------------`)
+                console.log(`
+                    --- Round ${counter} --- 
+                    Player 1: ${convertToString(player1Roll)} 
+                    Player 2: ${convertToString(player2Roll)} 
+                    There was a tie 
+                    ---------------`)
                 break
             // Player 1 wins
             case player1Roll === 0 && player2Roll === 2 || player1Roll === 1 && player2Roll === 0 || player1Roll === 2 && player2Roll === 1:
-                console.log(`--- Round ${counter} --- \nPlayer 1: ${convertToString(player1Roll)} \nPlayer 2: ${convertToString(player2Roll)} \nPlayer 1 Wins \n---------------`)
+                console.log(`
+                    --- Round ${counter} --- 
+                    Player 1: ${convertToString(player1Roll)} 
+                    Player 2: ${convertToString(player2Roll)} 
+                    Player 1 Wins 
+                    ---------------`)
                 p1Wins++
                 break
             // Player 2 wins
             case player2Roll === 0 && player1Roll === 2 || player2Roll === 1 && player1Roll === 0 || player2Roll === 2 && player1Roll === 1:
-                console.log(`--- Round ${counter} --- \nPlayer 1: ${convertToString(player1Roll)} \nPlayer 2: ${convertToString(player2Roll)} \nPlayer 2 Wins \n---------------`)
+                console.log(`
+                    --- Round ${counter} --- 
+                    Player 1: ${convertToString(player1Roll)} 
+                    Player 2: ${convertToString(player2Roll)} 
+                    Player 2 Wins 
+                    ---------------`)
                 p2Wins++
                 break
         }
