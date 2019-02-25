@@ -17,7 +17,7 @@ https://practice.geeksforgeeks.org/problems/twice-counter/0
 */
 
 
-const repeatedStrings = ['ocean', 'sand', 'ocean', 'waves', 'water', 'waves', 'water', 'sand', 'water', 'sand'];
+const repeatedStrings = ['ocean', 'sand', 'ocean', 'waves', 'sand', 'water', 'waves', 'water', 'sand', 'water', 'sand'];
 const countStrings = (array) => {
     let results = {}
     for (let i = 0; i < repeatedStrings.length; i++) {
