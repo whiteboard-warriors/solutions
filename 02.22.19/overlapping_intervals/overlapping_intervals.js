@@ -11,14 +11,14 @@ Make sure the returned intervals are sorted.
 */
 
 
-var intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+const intervalArray = [[1, 3], [2, 6], [7, 9], [8, 10], [15, 18]]
 
-var merge_intervals = function(intervals) {
+const merge_intervals = (intervals) => {
 	output_array = []
 	curr_end = -1
 	curr_start = -1
 	counter = 0
-	for (var i in intervals) {
+	for (i in intervals) {
 		if (intervals[i][0] > curr_end) {
 			if (counter != 0) {
 				output_array.push([curr_start, curr_end])
@@ -36,7 +36,7 @@ var merge_intervals = function(intervals) {
 	return output_array
 }
 
-var merged = merge_intervals(intervals)
+let merged = merge_intervals(intervalArray)
 for (var i in merged) {
-	console.log('(' + merged[i][0] + ',' + merged[i][1] + ') ')
+	console.log(`[${merged[i][0]}, ${merged[i][1]}]`)
 }
